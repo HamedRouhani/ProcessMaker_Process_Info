@@ -1,0 +1,30 @@
+$Process_Code = @@Process_Code;
+$Process_Detial_Title = @@Process_Detial_Title;
+$Process_Group_UID = @@Process_Group_UID;
+$Process_Title = @@Process_Title;
+$Process_Remark = @@Process_Remark;
+$Registered_By_USR_UID = @@USER_LOGGED;
+$Time_Stamp = @@Time_Stamp;
+$IsDelete = @@IsDelete;
+$TB_Remark = @@TB_Remark;
+
+$sql = "INSERT INTO PMT_TB100007 (
+	Process_Code,
+	Process_Detial_Title,
+	Process_Group_UID,
+	Process_Title,
+	Process_Remark,
+	Registered_By_USR_UID,
+	Time_Stamp,
+	IsDelete)
+VALUES (
+	'$Process_Code',
+	'$Process_Detial_Title',
+	'$Process_Group_UID',
+	'$Process_Title',
+	'$Process_Remark',
+	'$Registered_By_USR_UID',
+	'$Time_Stamp',
+	'$IsDelete')";
+
+executeQuery ($sql);

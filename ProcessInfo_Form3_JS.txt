@@ -1,0 +1,49 @@
+//‰„«Ì‘ ’›ÕÂ
+$("#1520996096285bfa95461e3057511475").css({"backgroundColor":"#99FF99"});
+$("#1520996096285bfa95461e3057511475").css({"border":"3px double #336699"});
+
+
+$("#title0000000001").css({"font-family":"b Titr","color":"#ffffff","background-color":"#336699","border-radius":"5px"});
+$("#title0000000001").css({"text-align":"center"});
+
+$("#Process_Code").css({"font-family":"Arial","margin-top":"20px"});
+$("#Process_Detial_Title").css({"font-family":"Arial","margin-top":"20px","text-align":"LEFT"});
+$("#counter").css({"font-family":"Arial","margin-top":"20px","text-align":"right"});
+$("#Process_Group_UID").css({"font-family":"Arial","margin-top":"20px","text-align":"right"});
+$("#Sub_Code").css({"font-family":"Arial","margin-top":"20px","text-align":"right"});
+$("#Time_Stamp").css({"font-family":"Arial","margin-top":"20px","text-align":"right"});
+$("#Process_Title").css({"font-family":"Arial","margin-top":"20px","text-align":"right"});
+$("#Process_Remark").css({"font-family":"Arial","margin-top":"20px","text-align":"right"});
+$("#Confirmation_Note").css({"font-family":"Arial","margin-top":"20px","text-align":"right","color":"brown"});
+
+$("#submit0000000001").css({"font-family":"b titr","margin-top":"20px"});
+
+//  ⁄ÌÌ‰ ﬂœ ÃœÊ·
+
+$("#Process_Group_UID").setOnchange( function() {
+
+$("#NewCounter").setValue(parseInt($("#counter").getValue())+1);
+
+if ($("#NewCounter").getValue() <10) {
+	$("#Process_Code").setValue($("#Sub_Code").getValue().concat("0",$("#NewCounter").getValue()));
+	} else {
+	$("#Process_Code").setValue($("#Sub_Code").getValue().concat($("#NewCounter").getValue()));
+                                     }
+});
+
+//  «ÌÌœ «ÿ·«⁄« 
+$("#Confirmation_Note").hide();
+$("#submit0000000001").hide();
+
+$("#button_Confirm").find("button").click(function(){
+	$("#Confirmation_Note").show();
+	$("#submit0000000001").show();
+
+// Å— ﬂ—œ‰  Ê÷ÌÕ«  ÃœÊ·
+$("#Process_Detial_Title").setValue ($("#Process_Title").getValue().concat(" / ",$("#Sub_Code").getValue()," / No._"
+                                                           ,($("#Process_Code").getValue()).substring(4,6)
+                                                            			  )
+                          			);  
+  
+  
+});

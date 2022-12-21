@@ -1,0 +1,54 @@
+//‰„«Ì‘ ’›ÕÂ
+$("#9754333496285bf9c8d44e6051647351").css({"backgroundColor":"#99FF99"});
+$("#9754333496285bf9c8d44e6051647351").css({"border":"3px double #336699"});
+
+
+$("#title0000000001").css({"font-family":"b Titr","color":"#ffffff","background-color":"#336699","border-radius":"5px"});
+$("#title0000000001").css({"text-align":"center"});
+
+$("#Select_Reg_Type").css({"font-family":"Arial","margin-top":"20px"});
+$("#Process_Group_UID").css({"font-family":"Arial","margin-top":"20px","text-align":"LEFT"});
+$("#Select_Process").css({"font-family":"Arial","margin-top":"20px","text-align":"right"});
+
+$("#submit0000000001").css({"font-family":"b titr","margin-top":"20px"});
+
+
+//œ— ’Ê—  «’·«Õ ÃœÊ· ° «‰ Œ«» ÃœÊ· ›⁄«· „Ì ‘Êœ
+
+if ($("#Select_Reg_Type").getValue() == 1) {
+    $('#Process_Group_UID').hide();
+    $('#Select_Process').hide();
+} else {
+    $('#Process_Group_UID').show();
+    $('#Select_Process').show();
+};
+
+$("#Select_Reg_Type").setOnchange(function(TVal) {
+  TVal = $("#Select_Reg_Type").getValue();
+  if (TVal == 1) {
+    $('#Process_Group_UID').hide();
+    $('#Select_Process').hide();
+  } 
+  else {
+    $('#Process_Group_UID').show();
+    $('#Select_Process').show();  
+  }
+});
+
+//œ— ’Ê— ÌﬂÂ ÃœÊ· «‰ Œ«» ‰‘Êœ ° ›—¬Ì‰œ «’·«Õ «Ã—« ‰‘Êœ
+
+$("#9754333496285bf9c8d44e6051647351").setOnSubmit(function(ConVal,RVal) {
+  ConVal = $("#Select_Process").getValue();
+  RVal = $("#Select_Reg_Type").getValue();
+
+  if (RVal == 1) {
+    return true;
+  }
+  else if (ConVal == "") {
+    alert("«‰ Œ«» ›—¬Ì‰œ ÷—Ê—Ì «” !");
+    return false;
+  }
+  else {
+    return true;
+  }
+});

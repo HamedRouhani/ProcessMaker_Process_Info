@@ -1,0 +1,22 @@
+$Process_Code = @@Process_Code;
+$Process_Detial_Title = @@Process_Detial_Title;
+$Process_Title = @@Process_Title;
+$Process_Group_UID = @@Process_Group_UID;
+$Process_Remark = @@Process_Remark;
+$Registered_By_USR_UID = @@USER_LOGGED;
+$Time_Stamp = @@Time_Stamp;
+$IsDelete = @@Delete_Condition;
+$Select_Process = @@Select_Process;
+
+$sql = "UPDATE PMT_TB100007 SET 
+	Process_Code = '$Process_Code',
+	Process_Detial_Title = '$Process_Detial_Title',
+	Process_Title = '$Process_Title',
+	Process_Group_UID = '$Process_Group_UID',
+	Process_Remark = '$Process_Remark',
+	Registered_By_USR_UID = '$Registered_By_USR_UID',
+	Time_Stamp = '$Time_Stamp', 
+	IsDelete = '$IsDelete' 
+WHERE ID ='$Select_Process'";
+
+executeQuery ($sql);
